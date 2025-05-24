@@ -56,6 +56,10 @@ pages:
               - title: Ebay
                 shortcut: "!ebay"
                 url: https://www.ebay.com/sch/i.html?_nkw={QUERY}
+
+              - title: Wallhaven
+                shortcut: "!wh"
+                url: https://wallhaven.cc/search?q={QUERY}
                 
 
           - type: videos
