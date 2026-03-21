@@ -27,11 +27,6 @@ pages:
               - lvndmark
               - stankrat
 
-          - type: server-stats
-            servers:
-              - type: local
-                name: Services
-
       - size: full
         widgets:
           - type: search
@@ -61,45 +56,103 @@ pages:
                 shortcut: "!wh"
                 url: https://wallhaven.cc/search?q={QUERY}
 
-          - type: videos
-            channels:
-              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
-              - UChIs72whgZI9w6d6FhwGGHA # Gamers Nexus
-          
-          - type: bookmarks
-            groups:
-              - title: Managed Websites
-                color: 11 87 50
-                links:
-                  - title: Queen of Archangels
-                    url: https://www.queenofarchangels.com/
-                    
-                  - title: Knights of Columbus 12038
-                    url: https://www.kofc12038.com/
+              - title: GitHub
+                shortcut: "!gh"
+                url: https://github.com/search?q={QUERY}
 
-                  - title: Shavargo.com
-                    url: https://www.shavargo.com/
+              - title: Docker Hub
+                shortcut: "!dh"
+                url: https://hub.docker.com/search?q={QUERY}
 
-              - title: Backwoods Web Solutions
-                color: 11 87 50
-                links:
-                  - title: Backwoods Web Solutions
-                    url: https://www.backwoodswebsolutions.com
-                  - title: Tianji
-                    url: https://tianji.backwoodswebsolutions.com/
+              - title: MDN Docs
+                shortcut: "!mdn"
+                url: https://developer.mozilla.org/en-US/search?q={QUERY}
+
+          - type: html
+            title: Search Bangs
+            source: |
+              <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                <table style="flex: 1; border-collapse: collapse;">
+                  <tbody>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!yt</td><td style="padding: 3px 8px;">YouTube</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!red</td><td style="padding: 3px 8px;">Reddit</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!steam</td><td style="padding: 3px 8px;">Steam</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!amazon</td><td style="padding: 3px 8px;">Amazon</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!ebay</td><td style="padding: 3px 8px;">eBay</td></tr>
+                  </tbody>
+                </table>
+                <table style="flex: 1; border-collapse: collapse;">
+                  <tbody>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!wh</td><td style="padding: 3px 8px;">Wallhaven</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!gh</td><td style="padding: 3px 8px;">GitHub</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!dh</td><td style="padding: 3px 8px;">Docker Hub</td></tr>
+                    <tr><td class="color-primary" style="padding: 3px 8px;">!mdn</td><td style="padding: 3px 8px;">MDN Docs</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+          - type: rss
+            title: Tech News
+            collapse-after: 5
+            feeds:
+              - url: https://www.xda-developers.com/feed/
+                title: XDA Developers
+              - url: https://feeds.arstechnica.com/arstechnica/index
+                title: Ars Technica
+              - url: https://www.theverge.com/rss/index.xml
+                title: The Verge
+              - url: https://www.tomshardware.com/feeds/all
+                title: Tom's Hardware
+              - url: https://www.engadget.com/rss.xml
+                title: Engadget
+              - url: https://www.wired.com/feed/rss
+                title: Wired
+              - url: https://dev.to/feed
+                title: Dev.to
+              - url: https://lobste.rs/rss
+                title: Lobsters
+              - url: https://krebsonsecurity.com/feed/
+                title: Krebs on Security
+              - url: https://feeds.feedburner.com/TheHackersNews
+                title: The Hacker News
+
+          - type: monitor
+            title: My Domains
+            sites:
+              - title: backwoodswebsolutions.com
+                url: https://backwoodswebsolutions.com
+              - title: deepwoods.app
+                url: https://deepwoods.app
+              - title: sectorfourgaming.com
+                url: https://sectorfourgaming.com
+              - title: shavargo.com
+                url: https://shavargo.com
+
+          - type: monitor
+            title: Managed Domains
+            sites:
+              - title: kofc12038.com
+                url: https://kofc12038.com
+              - title: cleanitupjunkremoval.com
+                url: https://www.cleanitupjunkremoval.com
 
       - size: small
         widgets:
           - type: markets
+            title: My Stocks
             markets:
-              - symbol: BTC-USD
-                name: Bitcoin
+              - symbol: MU
+                name: Micron Technology
               - symbol: NVDA
                 name: NVIDIA
-              - symbol: AMD
-                name: AMD
-              - symbol: INTC
-                name: Intel
+              - symbol: YYGH
+                name: YY Group
+              - symbol: GOOG
+                name: Alphabet
+              - symbol: SPY
+                name: S&P 500 ETF
+              - symbol: TSM
+                name: TSMC
 
           - type: releases
             token: ${GIT_TOKEN}
